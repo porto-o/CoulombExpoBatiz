@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>Ley de Coulomb Expo Bátiz 2021</title>
+    <script src='main.js'></script>
+    <script src="p5.min.js"></script>
+    <script src="dom.js"></script>
+    <script src="jQuery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel='stylesheet' href='style.css'>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+    <div class='headers'>
+        <h3 span id='c_1'>q1 : </h3>
+        <h3 span id='h_1'>x-1 : </h3>
+        <h3 span id='h_2'>y-1 : </h3>
+        <h3 span id='h_3'>z-1 : </h3>
+    </div>
+    <div class='headers'>
+        <h3 span id='c_2'>Q2 : </h3>
+        <h3 span id='h_4'>X2 : </h3>
+        <h3 span id='h_5'>Y2 : </h3>
+        <h3 span id='h_6'>Z2 : </h3>
+    </div>
+    <div class='Inputs'>
+        <input class="inline" id='q1' type='number' autofocus>
+        <p class="text2 inline"> x10</p>
+        <sup><input class="inline" id='qP' type='number'></sup>
+        <br>
+        <input id='input1' type='number'>
+        <br>
+        <input id='input2' type='number'>
+        <br>
+        <input id='input3' type='number'>
+    </div>
+
+    <div class='Inputs2'>
+        <input class="inline" id='q2' type='number'>
+        <p class="text2 inline"> x10</p>
+        <sup><input class="inline" id='qP2' type='number'></sup>
+        <br>
+        <input id='input4' type='number'>
+        <br>
+        <input id='input5' type='number'>
+        <br>
+        <input id='input6' type='number'>
+        <br>
+        <p class="note">*Nota: La distancia es en metros.</p>
+    </div>
+
+    <div class="answer">
+        <div class="text">
+            <p class="block">Resultados</p>
+            <p class="inline"> F<sub>1-2</sub> = </p>
+            <p class="inline" id="t1"></p>
+            <p class="inline">i</p>
+            <p class="inline" id="t2"></p>
+            <p class="inline">j</p>
+            <p class="inline" id="t3"></p>
+            <p class="inline">k</p>
+        </div>
+
+        <div class="text">
+            <p class="inline"> F<sub>2-1</sub> = -</p>
+            <p class="inline">( </p>
+            <p class="inline" id="t4"></p>
+            <p class="inline">i</p>
+            <p class="inline" id="t5"></p>
+            <p class="inline">j</p>
+            <p class="inline" id="t6"></p>
+            <p class="inline">k</p>
+            <p class="inline"> )</p>
+        </div>
+
+
+    </div>
+    <div class="about_btn">
+        <a href="about.html">
+            <button id="aboutBtn" class="btn button">Aprende más</button>
+        </a>
+    </div>
+
+    <script>
+        jQuery.extend(jQuery.expr[':'], {
+            focusable: function (el, index, selector) {
+                return $(el).is('a, button, :input, [tabindex]');
+            }
+        });
+
+        $(document).on('keypress', 'input,select', function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                // Get all focusable elements on the page
+                var $canfocus = $(':focusable');
+                var index = $canfocus.index(this) + 1;
+                if (index >= $canfocus.length) index = 0;
+                $canfocus.eq(index).focus();
+            }
+        });
+    </script>
+</body>
+
+</html>
